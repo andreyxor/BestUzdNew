@@ -6,7 +6,7 @@ namespace BestUzdNew.Logic
 {
     public interface IServiceForServiceEntity
     {
-        Task CreateServiceAsync(Service service, Translation nameTranslation, Translation descriptionTranslation);
+        Task CreateServiceAsync(Service service, int serviceGroupId, Translation nameTranslation, Translation descriptionTranslation);
         Task<ICollection<Service>> GetServicesAsync();
     }
 }

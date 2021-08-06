@@ -7,7 +7,7 @@ namespace BestUzdNew.DataAccess
     public interface IRepository<T> where T : Entity
     {
         void Create(T item);
-        Task<T> FindById(int id);
+        Task<T> FindByIdAsync(int id);
         /// <summary>
         /// Only for read operations
         /// </summary>

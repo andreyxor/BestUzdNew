@@ -18,7 +18,7 @@ namespace BestUzdNew.DataAccess
 
         public IQueryable<T> Query { get { return _dbSet; } }
 
-        public async Task<T> FindById(int id)
+        public async Task<T> FindByIdAsync(int id)
         {
             return await _dbSet.SingleAsync(x => x.Id == id);
         }
