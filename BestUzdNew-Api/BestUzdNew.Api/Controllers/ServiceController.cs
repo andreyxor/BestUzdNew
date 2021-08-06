@@ -32,7 +32,7 @@ namespace BestUzdNew.Api.Controllers
             var nameTranslation = _mapper.Map<TranslationInDto, Translation>(dto.NameTranslationDto);
             var descriptionTranslation = _mapper.Map<TranslationInDto, Translation>(dto.DescriptionTranslationDto);
 
-            await _service.CreateServiceAsync(service, nameTranslation, descriptionTranslation);
+            await _service.CreateServiceAsync(service, dto.ServiceGroupId, nameTranslation, descriptionTranslation);
 
             return Ok();
         }
