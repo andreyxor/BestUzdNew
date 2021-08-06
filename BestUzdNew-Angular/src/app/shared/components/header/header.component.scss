@@ -15,5 +15,9 @@ header {
     display: flex;
     &__elem {
         margin-right: 30px;
+        cursor: pointer;
+        &:hover {
+            color: grey;
+        }
     }   
 }

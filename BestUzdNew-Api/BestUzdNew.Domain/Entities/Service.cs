@@ -11,6 +11,7 @@ namespace BestUzdNew.Domain.Entities
         {
             Orders = new HashSet<Order>();
             ServiceDiscounts = new HashSet<ServiceDiscount>();
+            ServiceGroups = new HashSet<ServiceGroup>();
         }
 
         public string NameAlias { get; set; }
@@ -19,5 +20,6 @@ namespace BestUzdNew.Domain.Entities
 
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<ServiceDiscount> ServiceDiscounts { get; set; }
+        public virtual ICollection<ServiceGroup> ServiceGroups { get; set; }
     }
 }
