@@ -9,6 +9,9 @@ namespace BestUzdNew.Logic.Extensions
         {
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IServiceForServiceEntity, ServiceForServiceEntity>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IServiceForServiceGroupEntity, ServiceForServiceGroupEntity>();
+
         }
     }
 }
