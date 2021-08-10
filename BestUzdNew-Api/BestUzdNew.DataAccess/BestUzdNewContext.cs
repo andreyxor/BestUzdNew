@@ -1,9 +1,11 @@
-﻿using BestUzdNew.DataAccess.Extensions;
-using BestUzdNew.Domain.Contracts;
+﻿using System;
 using BestUzdNew.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace BestUzdNew.DataAccess
 {
@@ -18,42 +20,38 @@ namespace BestUzdNew.DataAccess
         {
         }
 
-        public virtual DbSet<DiscountType> DiscountTypes { get; set; }
-        public virtual DbSet<Language> Languages { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Schedule> Schedules { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
-        public virtual DbSet<ServiceDiscount> ServiceDiscounts { get; set; }
-        public virtual DbSet<ServiceGroup> ServiceGroups { get; set; }
-        public virtual DbSet<ServiceGroupDiscount> ServiceGroupDiscounts { get; set; }
-        public virtual DbSet<ServiceGroupToService> ServiceGroupToServices { get; set; }
-        public virtual DbSet<ServiceSetDiscount> ServiceSetDiscounts { get; set; }
-        public virtual DbSet<ServiceSetDiscountToService> ServiceSetDiscountToServices { get; set; }
-        public virtual DbSet<Translation> Translations { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserInformation> UserInformations { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<DiscountType> DiscountType { get; set; }
+        public virtual DbSet<Language> Language { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<Schedule> Schedule { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<ServiceDiscount> ServiceDiscount { get; set; }
+        public virtual DbSet<ServiceGroup> ServiceGroup { get; set; }
+        public virtual DbSet<ServiceGroupDiscount> ServiceGroupDiscount { get; set; }
+        public virtual DbSet<ServiceGroupToService> ServiceGroupToService { get; set; }
+        public virtual DbSet<ServiceSetDiscount> ServiceSetDiscount { get; set; }
+        public virtual DbSet<ServiceSetDiscountToService> ServiceSetDiscountToService { get; set; }
+        public virtual DbSet<Translation> Translation { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserInformation> UserInformation { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=localhost;Database=BestUzdNew;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
-
             modelBuilder.Entity<DiscountType>(entity =>
             {
-                entity.ToTable("DiscountType");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.DescriptionAlias).IsRequired();
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.NameAlias)
                     .IsRequired()
@@ -62,9 +60,7 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<Language>(entity =>
             {
-                entity.ToTable("Language");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -77,7 +73,9 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.ToTable("Order");
+                entity.HasIndex(e => e.IsDeleted);
+
+                entity.HasIndex(e => e.ServiceId);
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -86,8 +84,6 @@ namespace BestUzdNew.DataAccess
                 entity.Property(e => e.FamilyName)
                     .IsRequired()
                     .HasMaxLength(100);
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -98,7 +94,7 @@ namespace BestUzdNew.DataAccess
                     .HasMaxLength(100);
 
                 entity.HasOne(d => d.Service)
-                    .WithMany(p => p.Orders)
+                    .WithMany(p => p.Order)
                     .HasForeignKey(d => d.ServiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Order_ServiceFK");
@@ -106,24 +102,20 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<Schedule>(entity =>
             {
-                entity.ToTable("Schedule");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.Date).HasColumnType("date");
 
                 entity.Property(e => e.EndTime).HasColumnType("date");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.StartTime).HasColumnType("date");
             });
 
             modelBuilder.Entity<Service>(entity =>
             {
-                entity.ToTable("Service");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.DescriptionAlias).IsRequired();
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.NameAlias)
                     .IsRequired()
@@ -132,13 +124,17 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<ServiceDiscount>(entity =>
             {
-                entity.ToTable("ServiceDiscount");
+                entity.HasIndex(e => e.DiscountTypeId);
+
+                entity.HasIndex(e => e.IsDeleted);
+
+                entity.HasIndex(e => e.ServiceId);
+
+                entity.HasIndex(e => e.UserId);
 
                 entity.Property(e => e.DescriptionAlias).IsRequired();
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.NameAlias)
                     .IsRequired()
@@ -147,25 +143,25 @@ namespace BestUzdNew.DataAccess
                 entity.Property(e => e.StartDate).HasColumnType("date");
 
                 entity.HasOne(d => d.DiscountType)
-                    .WithMany(p => p.ServiceDiscounts)
+                    .WithMany(p => p.ServiceDiscount)
                     .HasForeignKey(d => d.DiscountTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceDiscount_DiscountTypeFK");
 
                 entity.HasOne(d => d.Service)
-                    .WithMany(p => p.ServiceDiscounts)
+                    .WithMany(p => p.ServiceDiscount)
                     .HasForeignKey(d => d.ServiceId)
                     .HasConstraintName("ServiceDiscount_ServiceFK");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.ServiceDiscounts)
+                    .WithMany(p => p.ServiceDiscount)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("ServiceDiscount_UserFK");
             });
 
             modelBuilder.Entity<ServiceGroup>(entity =>
             {
-                entity.ToTable("ServiceGroup");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.DescriptionAlias).IsRequired();
 
@@ -176,13 +172,17 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<ServiceGroupDiscount>(entity =>
             {
-                entity.ToTable("ServiceGroupDiscount");
+                entity.HasIndex(e => e.DiscountTypeId);
+
+                entity.HasIndex(e => e.IsDeleted);
+
+                entity.HasIndex(e => e.ServiceGroupId);
+
+                entity.HasIndex(e => e.UserId);
 
                 entity.Property(e => e.DescriptionAlias).IsRequired();
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.NameAlias)
                     .IsRequired()
@@ -191,38 +191,40 @@ namespace BestUzdNew.DataAccess
                 entity.Property(e => e.StartDate).HasColumnType("date");
 
                 entity.HasOne(d => d.DiscountType)
-                    .WithMany(p => p.ServiceGroupDiscounts)
+                    .WithMany(p => p.ServiceGroupDiscount)
                     .HasForeignKey(d => d.DiscountTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceGroupDiscount_DiscountTypeFK");
 
                 entity.HasOne(d => d.ServiceGroup)
-                    .WithMany(p => p.ServiceGroupDiscounts)
+                    .WithMany(p => p.ServiceGroupDiscount)
                     .HasForeignKey(d => d.ServiceGroupId)
                     .HasConstraintName("ServiceGroupDiscount_ServiceGroupFK");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.ServiceGroupDiscounts)
+                    .WithMany(p => p.ServiceGroupDiscount)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("ServiceGroupDiscount_UserFK");
             });
 
             modelBuilder.Entity<ServiceGroupToService>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(sg => new { sg.ServiceId, sg.ServiceGroupId});
 
-                entity.ToTable("ServiceGroupToService");
+                entity.HasIndex(e => e.IsDeleted);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.ServiceGroupId);
+
+                entity.HasIndex(e => e.ServiceId);
 
                 entity.HasOne(d => d.ServiceGroup)
-                    .WithMany()
+                    .WithMany(s => s.ServiceGroupsToServices)
                     .HasForeignKey(d => d.ServiceGroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceGroupToService_ServiceGroupFK");
 
                 entity.HasOne(d => d.Service)
-                    .WithMany()
+                    .WithMany(s => s.ServiceGroupsToServices)
                     .HasForeignKey(d => d.ServiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceGroupToService_ServiceFK");
@@ -230,42 +232,46 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<ServiceSetDiscount>(entity =>
             {
-                entity.ToTable("ServiceSetDiscount");
+                entity.HasIndex(e => e.DiscountTypeId);
+
+                entity.HasIndex(e => e.IsDeleted);
+
+                entity.HasIndex(e => e.UserId);
 
                 entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.StartDate).HasColumnType("date");
 
                 entity.HasOne(d => d.DiscountType)
-                    .WithMany(p => p.ServiceSetDiscounts)
+                    .WithMany(p => p.ServiceSetDiscount)
                     .HasForeignKey(d => d.DiscountTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceSetDiscount_DiscountTypeFK");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.ServiceSetDiscounts)
+                    .WithMany(p => p.ServiceSetDiscount)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("ServiceSetDiscount_UserFK");
             });
 
             modelBuilder.Entity<ServiceSetDiscountToService>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(sd => new { sd.ServiceSetDiscountId, sd.ServiceId });
 
-                entity.ToTable("ServiceSetDiscountToService");
+                entity.HasIndex(e => e.IsDeleted);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.ServiceId);
+
+                entity.HasIndex(e => e.ServiceSetDiscountId);
 
                 entity.HasOne(d => d.Service)
-                    .WithMany()
+                    .WithMany(d => d.ServiceSetDiscountsToServices)
                     .HasForeignKey(d => d.ServiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceSetDiscountToService_ServiceFK");
 
                 entity.HasOne(d => d.ServiceSetDiscount)
-                    .WithMany()
+                    .WithMany(d => d.ServiceSetDiscountsToServices)
                     .HasForeignKey(d => d.ServiceSetDiscountId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ServiceSetDiscountToService_ServiceSetDiscountFK");
@@ -273,20 +279,20 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<Translation>(entity =>
             {
-                entity.ToTable("Translation");
+                entity.HasIndex(e => e.IsDeleted);
+
+                entity.HasIndex(e => e.LanguageId);
 
                 entity.Property(e => e.Alias)
                     .IsRequired()
                     .HasMaxLength(100);
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Translation1)
                     .IsRequired()
                     .HasColumnName("Translation");
 
                 entity.HasOne(d => d.Language)
-                    .WithMany(p => p.Translations)
+                    .WithMany(p => p.Translation)
                     .HasForeignKey(d => d.LanguageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Translation_LanguageFK");
@@ -294,9 +300,11 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.ToTable("User");
+                entity.HasIndex(e => e.IsDeleted);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.UserInformationId);
+
+                entity.HasIndex(e => e.UserRoleId);
 
                 entity.Property(e => e.Login)
                     .IsRequired()
@@ -309,13 +317,13 @@ namespace BestUzdNew.DataAccess
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.UserInformation)
-                    .WithMany(p => p.Users)
+                    .WithMany(p => p.User)
                     .HasForeignKey(d => d.UserInformationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("User_UserInformationFK");
 
                 entity.HasOne(d => d.UserRole)
-                    .WithMany(p => p.Users)
+                    .WithMany(p => p.User)
                     .HasForeignKey(d => d.UserRoleId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_UserRole");
@@ -323,22 +331,18 @@ namespace BestUzdNew.DataAccess
 
             modelBuilder.Entity<UserInformation>(entity =>
             {
-                entity.ToTable("UserInformation");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.Email).HasMaxLength(200);
 
                 entity.Property(e => e.FamilyName).HasMaxLength(200);
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Name).HasMaxLength(200);
             });
 
             modelBuilder.Entity<UserRole>(entity =>
             {
-                entity.ToTable("UserRole");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.IsDeleted);
 
                 entity.Property(e => e.NameAlias)
                     .IsRequired()
@@ -346,16 +350,6 @@ namespace BestUzdNew.DataAccess
             });
 
             OnModelCreatingPartial(modelBuilder);
-
-            // https://www.thereformedprogrammer.net/ef-core-in-depth-soft-deleting-data-with-global-query-filters/
-            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-            {
-                //other automated configurations left out
-                if (typeof(ISoftDelete).IsAssignableFrom(entityType.ClrType))
-                {
-                    entityType.AddSoftDeleteQueryFilter();
-                }
-            }
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

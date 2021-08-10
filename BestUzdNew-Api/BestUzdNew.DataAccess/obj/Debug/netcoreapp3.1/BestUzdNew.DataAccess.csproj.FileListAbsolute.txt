@@ -20,7 +20,6 @@ F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\bin\Debug\netcoreapp3.1\BestUzdNew.D
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\bin\Debug\netcoreapp3.1\BestUzdNew.DataAccess.pdb
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\bin\Debug\netcoreapp3.1\BestUzdNew.Domain.dll
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\bin\Debug\netcoreapp3.1\BestUzdNew.Domain.pdb
-F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.csprojAssemblyReference.cache
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.AssemblyInfoInputs.cache
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.AssemblyInfo.cs
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.csproj.CoreCompileInputs.cache
@@ -28,3 +27,4 @@ F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.D
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.dll
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.pdb
 F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.genruntimeconfig.cache
+F:\Uzd\BestUzdNew-Api\BestUzdNew.DataAccess\obj\Debug\netcoreapp3.1\BestUzdNew.DataAccess.csprojAssemblyReference.cache

@@ -22,7 +22,11 @@ namespace BestUzdNew.Logic
             using (var uow = _unitOfWorkFactory.UnitOfWork)
             {
                 var serviceGroup = await uow.GetRepository<ServiceGroup>().FindByIdAsync(serviceGroupId);
-                service.ServiceGroups.Add(serviceGroup);
+                service.ServiceGroupsToServices.Add(new ServiceGroupToService 
+                {
+                    ServiceGroup =serviceGroup,
+                    Service = service
+                });
                 service.NameAlias = uow.GetRepository<Translation>().AddOrUpdateTranslation(nameTranslation);
                 service.DescriptionAlias = uow.GetRepository<Translation>().AddOrUpdateTranslation(descriptionTranslation);
                 uow.GetRepository<Service>().Create(service);
@@ -37,7 +41,7 @@ namespace BestUzdNew.Logic
             {
                 return await uow.GetRepository<Service>()
                              .Query
-                             .Include(x => x.ServiceGroups)
+                             .Include(x => x.ServiceGroupsToServices)
                              .ToListAsync();
             }
         }

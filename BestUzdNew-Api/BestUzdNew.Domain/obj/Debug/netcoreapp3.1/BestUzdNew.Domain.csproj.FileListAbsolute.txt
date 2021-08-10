@@ -10,9 +10,9 @@ C:\Development\BestUzdNew\src\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcore
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\bin\Debug\netcoreapp3.1\BestUzdNew.Domain.deps.json
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\bin\Debug\netcoreapp3.1\BestUzdNew.Domain.dll
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\bin\Debug\netcoreapp3.1\BestUzdNew.Domain.pdb
-F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.csprojAssemblyReference.cache
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.AssemblyInfoInputs.cache
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.AssemblyInfo.cs
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.csproj.CoreCompileInputs.cache
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.dll
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.pdb
+F:\Uzd\BestUzdNew-Api\BestUzdNew.Domain\obj\Debug\netcoreapp3.1\BestUzdNew.Domain.csprojAssemblyReference.cache

@@ -26,6 +26,3 @@ F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\obj\Debug\netcoreapp3.1\BestUzdNew.Logic.
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\obj\Debug\netcoreapp3.1\BestUzdNew.Logic.csproj.CopyComplete
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\obj\Debug\netcoreapp3.1\BestUzdNew.Logic.dll
 F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\obj\Debug\netcoreapp3.1\BestUzdNew.Logic.pdb
-F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\bin\Debug\netcoreapp3.1\BestUzdNew.Logic.runtimeconfig.json
-F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\bin\Debug\netcoreapp3.1\BestUzdNew.Logic.runtimeconfig.dev.json
-F:\Uzd\BestUzdNew-Api\BestUzdNew.Logic\obj\Debug\netcoreapp3.1\BestUzdNew.Logic.genruntimeconfig.cache

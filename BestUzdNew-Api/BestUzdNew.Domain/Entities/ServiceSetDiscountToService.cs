@@ -1,6 +1,10 @@
 ﻿using BestUzdNew.Domain.Contracts;
+using System;
+using System.Collections.Generic;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace BestUzdNew.Domain.Entities
 {
