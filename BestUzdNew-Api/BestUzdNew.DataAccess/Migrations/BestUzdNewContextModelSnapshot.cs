@@ -15,9 +15,8 @@ namespace BestUzdNew.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:Collation", "Latin1_General_CI_AS")
+                .HasAnnotation("ProductVersion", "3.1.17")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.DiscountType", b =>
@@ -32,14 +31,12 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -59,19 +56,17 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(400)
-                        .HasColumnType("nvarchar(400)");
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
 
                     b.Property<string>("ShortName")
                         .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("nvarchar(6)");
+                        .HasColumnType("nvarchar(6)")
+                        .HasMaxLength(6);
 
                     b.HasKey("Id");
 
@@ -89,28 +84,26 @@ namespace BestUzdNew.DataAccess.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("FamilyName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
@@ -138,9 +131,7 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("date");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("StartTime")
                         .HasColumnType("date");
@@ -164,14 +155,12 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
@@ -201,14 +190,12 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("date");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<int?>("ServiceId")
                         .HasColumnType("int");
@@ -251,8 +238,8 @@ namespace BestUzdNew.DataAccess.Migrations
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -279,14 +266,12 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("date");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<int?>("ServiceGroupId")
                         .HasColumnType("int");
@@ -315,19 +300,19 @@ namespace BestUzdNew.DataAccess.Migrations
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceGroupToService", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ServiceId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
 
                     b.Property<int>("ServiceGroupId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ServiceId")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ServiceId", "ServiceGroupId");
 
                     b.HasIndex("IsDeleted");
 
@@ -352,9 +337,7 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasColumnType("date");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("date");
@@ -378,19 +361,19 @@ namespace BestUzdNew.DataAccess.Migrations
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceSetDiscountToService", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ServiceSetDiscountId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
 
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ServiceSetDiscountId")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ServiceSetDiscountId", "ServiceId");
 
                     b.HasIndex("IsDeleted");
 
@@ -410,21 +393,19 @@ namespace BestUzdNew.DataAccess.Migrations
 
                     b.Property<string>("Alias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
                     b.Property<string>("Translation1")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Translation");
+                        .HasColumnName("Translation")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -443,21 +424,19 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Login")
                         .IsRequired()
+                        .HasColumnType("varchar(100)")
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .IsUnicode(false);
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
+                        .HasColumnType("varchar(200)")
                         .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
+                        .IsUnicode(false);
 
                     b.Property<int>("UserInformationId")
                         .HasColumnType("int");
@@ -484,21 +463,19 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("FamilyName")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -515,14 +492,12 @@ namespace BestUzdNew.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("NameAlias")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -534,193 +509,116 @@ namespace BestUzdNew.DataAccess.Migrations
             modelBuilder.Entity("BestUzdNew.Domain.Entities.Order", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.Service", "Service")
-                        .WithMany("Orders")
+                        .WithMany("Order")
                         .HasForeignKey("ServiceId")
                         .HasConstraintName("Order_ServiceFK")
                         .IsRequired();
-
-                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceDiscount", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.DiscountType", "DiscountType")
-                        .WithMany("ServiceDiscounts")
+                        .WithMany("ServiceDiscount")
                         .HasForeignKey("DiscountTypeId")
                         .HasConstraintName("ServiceDiscount_DiscountTypeFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.Service", "Service")
-                        .WithMany("ServiceDiscounts")
+                        .WithMany("ServiceDiscount")
                         .HasForeignKey("ServiceId")
                         .HasConstraintName("ServiceDiscount_ServiceFK");
 
                     b.HasOne("BestUzdNew.Domain.Entities.User", "User")
-                        .WithMany("ServiceDiscounts")
+                        .WithMany("ServiceDiscount")
                         .HasForeignKey("UserId")
                         .HasConstraintName("ServiceDiscount_UserFK");
-
-                    b.Navigation("DiscountType");
-
-                    b.Navigation("Service");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceGroupDiscount", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.DiscountType", "DiscountType")
-                        .WithMany("ServiceGroupDiscounts")
+                        .WithMany("ServiceGroupDiscount")
                         .HasForeignKey("DiscountTypeId")
                         .HasConstraintName("ServiceGroupDiscount_DiscountTypeFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.ServiceGroup", "ServiceGroup")
-                        .WithMany("ServiceGroupDiscounts")
+                        .WithMany("ServiceGroupDiscount")
                         .HasForeignKey("ServiceGroupId")
                         .HasConstraintName("ServiceGroupDiscount_ServiceGroupFK");
 
                     b.HasOne("BestUzdNew.Domain.Entities.User", "User")
-                        .WithMany("ServiceGroupDiscounts")
+                        .WithMany("ServiceGroupDiscount")
                         .HasForeignKey("UserId")
                         .HasConstraintName("ServiceGroupDiscount_UserFK");
-
-                    b.Navigation("DiscountType");
-
-                    b.Navigation("ServiceGroup");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceGroupToService", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.ServiceGroup", "ServiceGroup")
-                        .WithMany()
+                        .WithMany("ServiceGroupsToServices")
                         .HasForeignKey("ServiceGroupId")
                         .HasConstraintName("ServiceGroupToService_ServiceGroupFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.Service", "Service")
-                        .WithMany()
+                        .WithMany("ServiceGroupsToServices")
                         .HasForeignKey("ServiceId")
                         .HasConstraintName("ServiceGroupToService_ServiceFK")
                         .IsRequired();
-
-                    b.Navigation("Service");
-
-                    b.Navigation("ServiceGroup");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceSetDiscount", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.DiscountType", "DiscountType")
-                        .WithMany("ServiceSetDiscounts")
+                        .WithMany("ServiceSetDiscount")
                         .HasForeignKey("DiscountTypeId")
                         .HasConstraintName("ServiceSetDiscount_DiscountTypeFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.User", "User")
-                        .WithMany("ServiceSetDiscounts")
+                        .WithMany("ServiceSetDiscount")
                         .HasForeignKey("UserId")
                         .HasConstraintName("ServiceSetDiscount_UserFK");
-
-                    b.Navigation("DiscountType");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceSetDiscountToService", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.Service", "Service")
-                        .WithMany()
+                        .WithMany("ServiceSetDiscountsToServices")
                         .HasForeignKey("ServiceId")
                         .HasConstraintName("ServiceSetDiscountToService_ServiceFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.ServiceSetDiscount", "ServiceSetDiscount")
-                        .WithMany()
+                        .WithMany("ServiceSetDiscountsToServices")
                         .HasForeignKey("ServiceSetDiscountId")
                         .HasConstraintName("ServiceSetDiscountToService_ServiceSetDiscountFK")
                         .IsRequired();
-
-                    b.Navigation("Service");
-
-                    b.Navigation("ServiceSetDiscount");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.Translation", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.Language", "Language")
-                        .WithMany("Translations")
+                        .WithMany("Translation")
                         .HasForeignKey("LanguageId")
                         .HasConstraintName("Translation_LanguageFK")
                         .IsRequired();
-
-                    b.Navigation("Language");
                 });
 
             modelBuilder.Entity("BestUzdNew.Domain.Entities.User", b =>
                 {
                     b.HasOne("BestUzdNew.Domain.Entities.UserInformation", "UserInformation")
-                        .WithMany("Users")
+                        .WithMany("User")
                         .HasForeignKey("UserInformationId")
                         .HasConstraintName("User_UserInformationFK")
                         .IsRequired();
 
                     b.HasOne("BestUzdNew.Domain.Entities.UserRole", "UserRole")
-                        .WithMany("Users")
+                        .WithMany("User")
                         .HasForeignKey("UserRoleId")
                         .HasConstraintName("FK_User_UserRole")
                         .IsRequired();
-
-                    b.Navigation("UserInformation");
-
-                    b.Navigation("UserRole");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.DiscountType", b =>
-                {
-                    b.Navigation("ServiceDiscounts");
-
-                    b.Navigation("ServiceGroupDiscounts");
-
-                    b.Navigation("ServiceSetDiscounts");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.Language", b =>
-                {
-                    b.Navigation("Translations");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.Service", b =>
-                {
-                    b.Navigation("Orders");
-
-                    b.Navigation("ServiceDiscounts");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.ServiceGroup", b =>
-                {
-                    b.Navigation("ServiceGroupDiscounts");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.User", b =>
-                {
-                    b.Navigation("ServiceDiscounts");
-
-                    b.Navigation("ServiceGroupDiscounts");
-
-                    b.Navigation("ServiceSetDiscounts");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.UserInformation", b =>
-                {
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("BestUzdNew.Domain.Entities.UserRole", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

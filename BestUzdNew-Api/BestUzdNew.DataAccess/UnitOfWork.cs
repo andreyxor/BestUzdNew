@@ -1,5 +1,6 @@
 ﻿using BestUzdNew.Domain.Contracts;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
 using System.Threading.Tasks;
 
 namespace BestUzdNew.DataAccess
@@ -48,6 +49,10 @@ namespace BestUzdNew.DataAccess
         {
             foreach (var entry in _context.ChangeTracker.Entries())
             {
+                if (entry.Entity is IEnumerable)
+                {
+                    continue;
+                }
                 switch (entry.State)
                 {
                     case EntityState.Added:
