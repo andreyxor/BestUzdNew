@@ -19,12 +19,14 @@ namespace BestUzdNew.Logic
 
         public async Task CreateServiceAsync(Service service, int serviceGroupId, Translation nameTranslation, Translation descriptionTranslation)
         {
+            
             using (var uow = _unitOfWorkFactory.UnitOfWork)
             {
+                
                 var serviceGroup = await uow.GetRepository<ServiceGroup>().FindByIdAsync(serviceGroupId);
                 service.ServiceGroupsToServices.Add(new ServiceGroupToService 
                 {
-                    ServiceGroup =serviceGroup,
+                    ServiceGroup = serviceGroup,
                     Service = service
                 });
                 service.NameAlias = uow.GetRepository<Translation>().AddOrUpdateTranslation(nameTranslation);
