@@ -1,0 +1,23 @@
+.child-service-item {
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(62, 117, 199, 0.25); 
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__title, &__price {
+        padding: 15px 25px;
+    }
+
+    &:hover {
+        color:white;
+        background-color: rgba(0, 102, 255, 0.66);
+        border: none;
+        .child-service-item__price {
+            background: rgba(255, 255, 255, 0.22);
+            z-index: 255;
+            padding: 16px 25px 16px 25px;
+        }
+    }
+}

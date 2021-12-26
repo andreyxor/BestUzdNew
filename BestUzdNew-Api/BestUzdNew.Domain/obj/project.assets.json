@@ -8,26 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Чиполино\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\adand\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Domain\\BestUzdNew.Domain.csproj",
+      "projectUniqueName": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Domain\\BestUzdNew.Domain.csproj",
       "projectName": "BestUzdNew.Domain",
-      "projectPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Domain\\BestUzdNew.Domain.csproj",
-      "packagesPath": "C:\\Users\\Чиполино\\.nuget\\packages\\",
-      "outputPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Domain\\obj\\",
+      "projectPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Domain\\BestUzdNew.Domain.csproj",
+      "packagesPath": "C:\\Users\\adand\\.nuget\\packages\\",
+      "outputPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Чиполино\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\adand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -68,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

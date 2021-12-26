@@ -1,0 +1,33 @@
+<div class="service-item-container">
+    <div class="service-item" [ngClass]="data.active ? 'active' : ''">
+        <div (click)="serviceItemClicked()" class="service-item__base">
+            <div class="service-item__title">
+                {{ data.title }}
+            </div>
+            <div class="service-item__arrow">
+                <img src="assets/images/arrow.svg">
+            </div>
+        </div>
+
+        <div *ngIf="data.active" class="service-item__additional">
+            <div class="service-item__description">
+                {{data.description}}
+            </div>
+
+            <div class="service-item__price-name">
+                <div class="service-item__price-name__name">
+                    Назва послуги
+                </div>
+                <div class="service-item__price-name__price">
+                    Вартість
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="child-service-item" *ngIf="data.active">
+        <app-child-service-item *ngFor="let child of data.childs" [data]="child">
+        </app-child-service-item>
+    </div>
+    <div class="margin-bottom">
+    </div>
+</div>

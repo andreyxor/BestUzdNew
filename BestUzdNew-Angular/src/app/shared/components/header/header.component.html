@@ -1,13 +1,14 @@
 <header>
+    <div class="contacts">
+        Є питання? Зателефонуйте нам: <span>+38 (096) 321-88-88</span>
+    </div>
     <div class="nav-bar">
-        <div class="nav-bar__elem" [routerLink]="['']">
-            Главная
-        </div>
-        <div class="nav-bar__elem" [routerLink]="['/services']">
-            Услуги
-        </div>
-        <div class="nav-bar__elem" [routerLink]="['/contacts']">
-            Контакты
+        <app-logo></app-logo>
+        <div class="nav-bar__elems">
+            <div (click)="activate(i)" *ngFor="let i of navBarElements" class="nav-bar__elem"
+                [ngClass]="i.active ? 'active' : ''" [routerLink]="i.url">
+                {{ i.name }}
+            </div>
         </div>
     </div>
 </header>

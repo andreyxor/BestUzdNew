@@ -1,0 +1,39 @@
+.center-image {
+    width: 100%;
+    height: 600px;
+    background: no-repeat url("./../../../assets/images/home-page/center-image.png");
+    background-position-y: bottom;
+    .center-dummy {
+        width: 100%;
+        height: 600px;
+        background: no-repeat url("./../../../assets/images/home-page/center-dummy.png");
+        background-size: cover;
+        .center-text {
+            display: flex;
+            &-left {
+                padding: 6%;
+                padding-left: 10%;
+                width: 60%;
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 44px;
+                &-title {
+                    color: #116AEE;
+                }
+                &-description {
+
+                }
+            }
+            &-right {
+                padding: 6%;
+                width: 40%;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 39px;
+                &-item {
+                    
+                }
+            }
+        }
+    }
+}

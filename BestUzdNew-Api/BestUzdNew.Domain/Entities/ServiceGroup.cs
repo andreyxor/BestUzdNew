@@ -14,7 +14,6 @@ namespace BestUzdNew.Domain.Entities
         {
             ServiceGroupDiscount = new HashSet<ServiceGroupDiscount>();
             ServiceGroupsToServices = new HashSet<ServiceGroupToService>();
-
         }
 
         public string NameAlias { get; set; }
@@ -22,6 +21,5 @@ namespace BestUzdNew.Domain.Entities
 
         public virtual ICollection<ServiceGroupDiscount> ServiceGroupDiscount { get; set; }
         public virtual ICollection<ServiceGroupToService> ServiceGroupsToServices { get; set; }
-
     }
 }

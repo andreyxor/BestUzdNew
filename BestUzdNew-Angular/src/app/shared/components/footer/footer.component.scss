@@ -1,23 +1,84 @@
-@import "../../../../variables/height-variables.scss";
-@import "../../../../variables/margin-variables.scss";
-@import "../../../../variables/color-variables.scss";
+@import "../../../../variables/global-variables.scss";
 
 .footer {
-    color: $font-color-on-main-blue-color;
-    background-color: $main-blue-color;
-    height: $footer-height;
+    color: $font-color-on-main-color;
+    background-color: $main-color;
     width: 100%;
+    padding: 0 23%;
+    padding-top: 30px;
+    box-shadow: 0px 2px 11px rgba(147, 177, 222, 0.3);
+    padding-bottom: 20px;
     &-content {
+        padding-bottom: 35px;
+        border-bottom: 1px solid #65a3ff;
         display: flex;
-        margin: $base-application-margin;
-        &__contacts {
-            width: 20%;
+        &-first-part {
+            position: relative;
+            top: -10px;
+            width: 30%;
+            &__logo {
+                margin-bottom: 15px;
+            }
+            &__address {
+                font-weight: 600;
+                font-size: 14px;
+            }
         }
-        &__empty {
-            width: 40%;
+        &-second-part {
+            width: 25%;
+            &__working-hours-title {
+                font-weight: 600;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            &__working-hours-line {
+                font-size: 14px;
+                line-height: 120%;
+                margin-bottom: 3px;
+            }
         }
-        &__copyright {
-            width: 40%;
+        &-third-part {
+            width: 25%;
+            &__call-us {
+                font-weight: 600;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            &__call-us-phone {
+                margin-bottom: 8px;
+                text-decoration-line: underline;
+                color: #004FC6;
+                cursor: pointer;
+            }
+        }
+        &-fourth-part {
+            width: 8%;
+            &__social {
+                display: flex;
+                justify-content: space-between;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                }
+            }
         }
     }
+    &-content-bottom {
+        text-align: center;
+        &__line {
+            margin-top: 20px;
+        }
+    }
+}
+
+.copyright {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+.agreement {
+    text-decoration-line: underline;
+    color: #004FC6;
+    cursor: pointer;
 }

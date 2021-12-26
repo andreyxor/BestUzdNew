@@ -1,1 +1,5 @@
-<p>service-list-page works!</p>
+<div class="service-list">
+    <app-service-item (serviceItemClicked)="selectService(i)" *ngFor="let i of serviceItems" [data]="i">
+
+    </app-service-item>
+</div>

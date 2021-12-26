@@ -1,0 +1,60 @@
+.service-item {
+    transition: height 1s linear .5s;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(62, 117, 199, 0.25); 
+    border-radius: 11px 11px 11px 11px;
+    &__base {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 15px 25px;
+    }
+    &__title {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    &__arrow {
+        img {
+            height: 17px;
+            width: 17px;
+        }
+    }
+    &__description {
+        margin: 30px 0;
+    }
+    &__additional {
+        padding: 0 25px 15px 25px;
+    }
+}
+
+.active {
+    transition: height 1s linear .5s;
+    border-radius: 11px 11px 0 0;
+
+    img {
+       transform: rotate(90deg);
+    }
+    .service-item__title {
+        color: #65A3FF;
+    }
+    .service-item__price-name {
+        color: #65A3FF;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.child-service-item, .service-item {
+    margin: 0 30%;
+}
+
+.service-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

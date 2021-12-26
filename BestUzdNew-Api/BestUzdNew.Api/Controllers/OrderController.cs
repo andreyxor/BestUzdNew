@@ -39,6 +39,5 @@ namespace BestUzdNew.Api.Controllers
 
             return Ok(ordersDto);
         }
-
     }
 }

@@ -5999,26 +5999,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Чиполино\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\adand\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Api\\BestUzdNew.Api.csproj",
+      "projectUniqueName": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Api\\BestUzdNew.Api.csproj",
       "projectName": "BestUzdNew.Api",
-      "projectPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Api\\BestUzdNew.Api.csproj",
-      "packagesPath": "C:\\Users\\Чиполино\\.nuget\\packages\\",
-      "outputPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Api\\obj\\",
+      "projectPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Api\\BestUzdNew.Api.csproj",
+      "packagesPath": "C:\\Users\\adand\\.nuget\\packages\\",
+      "outputPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Чиполино\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\adand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -6033,11 +6030,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.DataAccess\\BestUzdNew.DataAccess.csproj": {
-              "projectPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.DataAccess\\BestUzdNew.DataAccess.csproj"
+            "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.DataAccess\\BestUzdNew.DataAccess.csproj": {
+              "projectPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.DataAccess\\BestUzdNew.DataAccess.csproj"
             },
-            "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Logic\\BestUzdNew.Logic.csproj": {
-              "projectPath": "F:\\Uzd\\BestUzdNew-Api\\BestUzdNew.Logic\\BestUzdNew.Logic.csproj"
+            "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Logic\\BestUzdNew.Logic.csproj": {
+              "projectPath": "C:\\Development\\BestUzdNew\\BestUzdNew\\BestUzdNew-Api\\BestUzdNew.Logic\\BestUzdNew.Logic.csproj"
             }
           }
         }
@@ -6097,7 +6094,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
