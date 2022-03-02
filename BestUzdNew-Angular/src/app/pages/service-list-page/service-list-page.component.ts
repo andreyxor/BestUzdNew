@@ -1,68 +1,51 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { ServiceItemData } from './service-item-data';
+import { serviceItems } from './service-list.data';
 
 @Component({
   selector: 'app-service-list-page',
   templateUrl: './service-list-page.component.html',
   styleUrls: ['./service-list-page.component.scss']
 })
-export class ServiceListPageComponent implements OnInit {
-  serviceItems: ServiceItemData[] = [
-    {
-      title: 'Дiагностика',
-      description: 'Зробити УЗД може фахівець, що володіє навичками роботи з відповідним устаткуванням. У його компетенції - попередній огляд і виписка висновків, по яких профільні лікарі можуть поставити діагноз.',
-      active: false,
-      url: 'диагностика',
-      childs: [
-        {
-          title: 'УЗД лімфовузлів',
-          price: 350,
-          url: 'УЗД-лшмфоузлов'
-        },
-        {
-          title: 'УЗД м’яких тканин',
-          price: 350,
-          url: 'УЗД-мягких-тканей'
-        },
-        {
-          title: 'УЗД судин шиї',
-          price: 350,
-          url: 'УЗД-сосудов-шеи'
-        },
-        {
-          title: 'УЗД молочних залоз',
-          price: 350,
-          url: 'УЗД-молочных-желез'
-        },
-      ]
-    },
-    {
-      title: 'Гастроентеролог',
-      description: '',
-      active: false,
-      url: 'Гастроэнтерология',
-      childs: []
-    },
-    {
-      title: 'Вагітність',
-      description: '',
-      active: false,
-      url: 'Беременность',
-      childs: []
-    },
-  ]
-
+export class ServiceListPageComponent {
+  serviceItems = serviceItems;
   selectService(service: ServiceItemData) {
     if (service.active) {
-      service.active = !service.active;
-      return;
+      this.redirectToRoute();
+    } else {
+      this.redirectToRoute([service.url]);
     }
-    this.serviceItems.forEach(x => x.active = false);
-    service.active = true;
   }
 
-  constructor() { }
+  constructor(private router: Router) { 
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const urlParts = event.url.split('/').map(x => decodeURI(x));
+        urlParts.shift(); // remove first one
 
-  ngOnInit(): void {
+        if (urlParts.length === 2) {
+          this.activateServiceByUrl(urlParts[1]);
+        } else if (urlParts.length === 1) {
+          this.deactivateServices();
+        }
+      }
+    })
+  }
+
+  private redirectToRoute(subRoutes: string[] = []) {
+    let route = `/Послуги`;
+    if (subRoutes.length) route += `/${subRoutes.join('/')}`;
+    this.router.navigateByUrl(route);
+  }
+
+  private activateServiceByUrl(url: string) {
+    this.deactivateServices();
+    const item = this.serviceItems.find(x => x.url === url);
+    item!.active = true;
+  }
+
+  private deactivateServices() {
+    serviceItems.forEach(x => x.active = false);
   }
 }

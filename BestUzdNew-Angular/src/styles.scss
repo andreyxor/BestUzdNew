@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/fonts/Montserrat-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;   
+    font-family: "Montserrat", Arial, sans-serif;
 }
 
-html, body
-{
+html,
+body {
     height: 100%;
 }

@@ -5,10 +5,7 @@
     <div class="nav-bar">
         <app-logo></app-logo>
         <div class="nav-bar__elems">
-            <div (click)="activate(i)" *ngFor="let i of navBarElements" class="nav-bar__elem"
-                [ngClass]="i.active ? 'active' : ''" [routerLink]="i.url">
-                {{ i.name }}
-            </div>
+            <app-mobile-menu [navBarElements]="navBarElements"></app-mobile-menu>
         </div>
     </div>
 </header>

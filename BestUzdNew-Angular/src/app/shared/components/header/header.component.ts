@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,27 +15,21 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: 'Послуги та цiни',
-      url: ['/сервисы'],
+      url: ['/Послуги'],
       active: false
     },
     {
-      name: 'Про клiнику',
-      url: ['/про-клинику'],
+      name: 'Про клiніку',
+      url: ['/Про-клініку'],
       active: false
     },
     {
       name: 'Контакти',
-      url: ['/контакты'],
+      url: ['/Контакти'],
       active: false
     }
   ]
-  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  activate(navElement: any) {
-    this.navBarElements.forEach(x => x.active = false);
-    navElement.active = true;
   }
 }

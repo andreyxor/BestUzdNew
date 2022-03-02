@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChildServiceItemData } from '../../service-item-data';
 
 @Component({
@@ -10,9 +11,18 @@ export class ChildServiceItemComponent implements OnInit {
   @Input()
   public data!: ChildServiceItemData;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  public selectChildService() {
+    // this.redirectToList([this.data.parent?.url || "not-found", this.data.url])
+  }
+
+  private redirectToList(subRoutes: string[] = []) {
+    let route = '';
+    if (subRoutes.length) route += `/${subRoutes.join('/')}`;
+    this.router.navigateByUrl(route);
+  }
 }

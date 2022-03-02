@@ -1,0 +1,23 @@
+.url-parts {
+    display: flex;
+    margin-bottom: 40px;
+    .url-part {
+        display: flex;
+        font-size: 1.0rem;
+        line-height: 24px;
+        color: #687C9B;
+    }
+    .url-separator {
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.last-url {
+    color: #65A3FF;
+    font-weight: 550;
+}

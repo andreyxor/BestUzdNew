@@ -5,7 +5,9 @@ export class ServiceItemData {
         public active: boolean,
         public url: string,
         public childs: ChildServiceItemData[] = []
-    ) { }
+    ) { 
+        childs.forEach(child => child.parent = this);
+    }
 }
 
 export class ChildServiceItemData {
@@ -13,5 +15,7 @@ export class ChildServiceItemData {
         public title: string,
         public price: number,
         public url: string,
+        public description: string,
+        public parent?: ServiceItemData
     ) { }
 }

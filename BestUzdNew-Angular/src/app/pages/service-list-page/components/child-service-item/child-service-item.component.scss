@@ -4,20 +4,42 @@
     border-top: none;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    font-size: 0.9rem;
 
     &__title, &__price {
         padding: 15px 25px;
     }
 
+    &__title {
+    }
+
+    &__price {
+        color: #65A3FF;
+        font-weight: 600;
+        min-width: 118px;
+        max-width: 105px !important;
+        margin: auto 0;
+    }
+
     &:hover {
-        color:white;
         background-color: rgba(0, 102, 255, 0.66);
         border: none;
+        .child-service-item__title {
+            color: white;
+            font-weight: 600;
+        }
         .child-service-item__price {
             background: rgba(255, 255, 255, 0.22);
             z-index: 255;
             padding: 16px 25px 16px 25px;
+            color: white;
         }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .child-service-item__price {
+        min-width: 105px !important;
+        max-width: 105px !important;
     }
 }

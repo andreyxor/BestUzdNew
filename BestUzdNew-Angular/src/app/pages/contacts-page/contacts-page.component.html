@@ -1,1 +1,8 @@
-<p>contacts-page works!</p>
+<div class="parent">
+    <div class="contacts">
+        <div *ngFor="let i of clc" class="working-place">
+            <app-working-place [clinic]="i" >
+            </app-working-place>
+        </div>
+    </div>
+</div>

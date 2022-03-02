@@ -1,0 +1,59 @@
+<div class="parent">
+    <div class="about-us">
+        <div class="title-text">
+            Здоров'я - головна людська цінність, і кожному з нас важливо розуміти, що у будь-який момент ми можемо
+            отримувати кваліфіковану медичну допомогу.
+        </div>
+        <div class="title-text">Наша клініка розташована в Подільському районі, в одному з найбільших мікрорайонів Києва
+            Виноградарі, має зручний під'їзд, стаянку для транспорту, свій окремий вхід.</div>
+        <div class="title-text">На сьогодні Клініка для всієї Родини надає послуги лабораторії, послуги основних
+            лікарів-фахівців, таких як: гінеколог, уролог, кардіолог, невролог, педіатр, хірург.</div>
+        <div class="title-text">У оснащенні клініки є апарат ВУЗД эксперт-класса Philips 5000, кольпоскоп КN-2200.</div>
+        <div class="about-doctors">
+            <div class="about-doctors__title">
+                <span> Наші лікарі </span>
+            </div>
+            <div class="about-doctors__list">
+                <div *ngFor="let doc of doctors" class="about-doctor">
+                    <div *ngIf="doc.image" class="doctor-photo">
+                        <img [src]="'/assets/images/photos/' + doc.image">
+                    </div>
+                    <div *ngIf="!doc.image" class="doctor-photo">
+
+                    </div>
+                    <div class="doctor-description">
+                        <div class="doctor-description__name">
+                            {{ doc.name }}
+                        </div>
+                        <div class="doctor-description__fields">
+                            <span *ngFor="let field of doc.workingFields">{{ field }}</span>
+                        </div>
+                        <div class="doctor-description__degree">
+                            {{ doc.degree }}
+                        </div>
+                        <div class="doctor-description__description">
+                             {{ doc.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-doctors__title">
+            <span> Фото клініки</span>
+        </div>
+        <div class="photo">
+            <div class="photo-row">
+                <img src="assets/images/clinic/2.jpg">
+            </div>
+            <div class="photo-row">
+                <img src="assets/images/clinic/3.jpg">
+            </div>
+            <div class="photo-row">
+                <img src="assets/images/clinic/4.jpg">
+            </div>
+            <div class="photo-row">
+                <img src="assets/images/clinic/1.jpg">
+            </div>
+        </div>
+    </div>
+</div>

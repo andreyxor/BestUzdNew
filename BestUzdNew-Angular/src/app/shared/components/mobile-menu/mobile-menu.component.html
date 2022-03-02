@@ -1,0 +1,20 @@
+<div class="standard-menu">
+    <div *ngFor="let i of navBarElements" class="standard-menu__elem" [ngClass]="i.active ? 'active' : ''"
+        [routerLink]="i.url">
+        {{ i.name }}
+    </div>
+</div>
+<div class="mobile-menu" #menuButton>
+    <div class="circle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+<div *ngIf="menuIsOpened" class="toggle-menu" #insideElement>
+    <div *ngFor="let i of navBarElements" (click)="openMenu()" class="toggle-menu__elem-container" [routerLink]="i.url">
+        <div class="toggle-menu__elem" >
+            {{ i.name }}
+        </div>
+    </div>
+</div>

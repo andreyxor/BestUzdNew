@@ -1,0 +1,10 @@
+<div class="url-parts">
+    <div *ngFor="let service of activeServices; last as isLast" class="url-part">
+        <div (click)="!isLast && redirect(service)" class="url-title" [ngClass]=" { 'cursor': !!service.url && !isLast, 'last-url': !!isLast}">
+            {{ service.title }}
+        </div>
+        <div *ngIf="!isLast" class="url-separator">
+            -
+        </div>
+    </div>
+</div>

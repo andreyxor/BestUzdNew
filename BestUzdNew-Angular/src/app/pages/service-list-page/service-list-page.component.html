@@ -1,5 +1,8 @@
-<div class="service-list">
-    <app-service-item (serviceItemClicked)="selectService(i)" *ngFor="let i of serviceItems" [data]="i">
-
-    </app-service-item>
+<div class="parent">
+    <div class="service-list">
+        <app-service-list-url></app-service-list-url>
+        <app-service-item (serviceItemClicked)="selectService(i)" *ngFor="let i of serviceItems" [data]="i">
+        </app-service-item>
+    </div>  
 </div>
+

@@ -1,0 +1,105 @@
+.about-us {
+    padding: 10px 0 40px 0; 
+    width: 1000px;
+    .title-text {
+        margin-top: 30px;
+        font-size: 1.0rem;
+    }
+    .about-doctors {
+        img {
+            max-width: 260px;
+        }
+        &__title {
+            font-size: 1.4rem;
+            line-height: 34px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            span {
+                width: 70px;
+                border-bottom: 3px solid #76C56F;
+                padding-bottom: 8px;
+            }
+        }
+        &__list {
+            display: inline;
+        }
+    }
+}
+
+.parent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-doctor {
+    display: flex;
+    margin-top: 30px;
+}
+
+.doctor-photo {
+    margin-right: 30px;
+    min-width: 260px;
+}
+.doctor-description {
+    &__name {
+        color: #233E65;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 29px;
+    }
+    &__fields {
+        font-weight: 500;
+        font-size: 1.0rem;
+        line-height: 24px;
+        color: #687C9B;
+        margin-top: 10px;
+        span {
+            margin-right: 10px;
+        }
+    }
+    &__degree {
+        font-weight: 500;
+        font-size: 1.0rem;
+        line-height: 24px;
+        color: #687C9B;
+        margin-top: 10px;
+        border-bottom: 1px solid #B5CFE4;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    &__description {
+        line-height: 23px;
+        font-size: 1.0rem;
+    }
+}
+
+.photo {
+    img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+.photo-row {
+    margin-top: 30px;
+    display: flex;
+}
+
+@media screen and (max-width: 1100px) {
+    .about-us {
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .doctor-photo {
+        min-width: 150px !important;
+        margin-right: 20px;
+    }
+    .about-doctors {
+        img {
+            max-width: 150px !important;
+        }
+    }
+}

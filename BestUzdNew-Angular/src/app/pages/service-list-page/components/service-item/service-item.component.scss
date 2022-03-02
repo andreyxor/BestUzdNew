@@ -1,8 +1,9 @@
 .service-item {
-    transition: height 1s linear .5s;
+    transition: height 1s linear 0.5s;
     background: rgba(255, 255, 255, 0.6);
-    border: 2px solid rgba(62, 117, 199, 0.25); 
+    border: 2px solid rgba(62, 117, 199, 0.25);
     border-radius: 11px 11px 11px 11px;
+    letter-spacing: 0.5px;
     &__base {
         display: flex;
         justify-content: space-between;
@@ -10,9 +11,10 @@
         padding: 15px 25px;
     }
     &__title {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Montserrat", Arial, sans-serif;
         font-weight: 500;
         letter-spacing: 1px;
+        font-size: 1rem;
     }
     &__arrow {
         img {
@@ -22,6 +24,7 @@
     }
     &__description {
         margin: 30px 0;
+        line-height: 22px;
     }
     &__additional {
         padding: 0 25px 15px 25px;
@@ -29,17 +32,19 @@
 }
 
 .active {
-    transition: height 1s linear .5s;
+    transition: height 1s linear 0.5s;
     border-radius: 11px 11px 0 0;
 
     img {
-       transform: rotate(90deg);
+        transform: rotate(90deg);
     }
     .service-item__title {
-        color: #65A3FF;
+        color: #65a3ff;
+        font-weight: 600;
     }
     .service-item__price-name {
-        color: #65A3FF;
+        font-weight: 600;
+        color: #65a3ff;
         display: flex;
         justify-content: space-between;
     }
@@ -49,12 +54,14 @@
     margin-bottom: 20px;
 }
 
-.child-service-item, .service-item {
-    margin: 0 30%;
-}
-
 .service-item-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 351px) {
+    img {
+        margin-left: 8px;
+    }
 }
